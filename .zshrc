@@ -89,7 +89,7 @@ eval "$(pyenv init -)"
 
 
 # Google Cloud
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/tom/.config/gcloud/application_default_credentials.json
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
 if [ -f '/Users/tom/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/tom/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/completion.zsh.inc'; fi
 
