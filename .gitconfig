@@ -1,0 +1,36 @@
+[user]
+email = devbytom@gmail.com
+name = Tom M G
+signingkey = 0x8EF9FCCFA9A4C994
+[commit]
+gpgsign = True
+
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
+
+[alias]
+lg = log --graph --all
+
+[github]
+user = 7onn
+
+[core]
+excludesfile = ~/.gitignore_global
+
+[push]
+default = simple
+
+[filter "lfs"]
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+[pull]
+rebase = false
+[init]
+defaultBranch = main

@@ -1,0 +1,24 @@
+[env]
+TERM="alacritty"
+
+[window.padding]
+x= 8
+y= 8
+
+[window]
+opacity=0.91
+#startup_mode="Fullscreen"
+decorations="Buttonless"
+dynamic_padding=true
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[font]
+size = 14
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+ 
