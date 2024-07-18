@@ -82,7 +82,6 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 
 
 # Python
-export PATH="/Users/tom/Library/Python/3.11/bin:/Users/tom/Library/Python/3.11/lib/python/site-packages:/Users/tom/Library/Python/3.9/bin:/Users/tom/Library/Python/3.9/lib/python/site-packages:/opt/homebrew/bin/:/opt/homebrew/lib/python3.10/site-packages:/opt/homebrew/opt/python@3.10/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -118,6 +117,8 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+
 # Latest shell stuff
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
