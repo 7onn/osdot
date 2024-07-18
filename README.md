@@ -9,6 +9,7 @@ ln -sf ~/osdot/.zshrc ~/.zshrc
 ln -sf ~/osdot/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf ~/osdot/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/osdot/.zsh ~/.zsh
+ln -sf ~/osdot/nvim ~/.config/nvim
 
 
 # Git
