@@ -75,7 +75,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export PATH="/Users/tom/pkg/kotlin-language-server/server/build/scripts:$PATH"
+export PATH="$HOME/pkg/kotlin-language-server/server/build/scripts:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
@@ -89,8 +89,8 @@ eval "$(pyenv init -)"
 
 # Google Cloud
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
-if [ -f '/Users/tom/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/tom/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tom/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 
 # Terraform
@@ -108,6 +108,11 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # Functions
 source ~/.zsh/functions.zsh
+
+
+# Javascript
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 
 # Package managers
