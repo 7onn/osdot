@@ -23,4 +23,6 @@ ln -sf ~/osdot/.aws/chrome-color-helper ~/.aws/chrome-color-helper
 ## MacOS specific
 ```
 ln -sf ~/osdot/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf ~/osdot/.amethyst.yml ~/.amethyst.yml
+ln -sf ~/osdot/amethyst-layout-center.js  ~/Library/Application\ Support/Amethyst/Layouts/center.js
 ```
