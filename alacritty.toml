@@ -6,7 +6,7 @@ x= 8
 y= 8
 
 [window]
-opacity=0.91
+opacity=1
 #startup_mode="Fullscreen"
 decorations="Buttonless"
 dynamic_padding=true

@@ -4,19 +4,6 @@ local o = vim.o
 o.syntax = "enable"
 vim.g.editorconfig = true
 
-require("transparent").setup({
-  enable = true,
-  extra_groups = {
-    "BufferLineTabClose",
-    "BufferlineBufferSelected",
-    "BufferLineFill",
-    "BufferLineBackground",
-    "BufferLineSeparator",
-    "BufferLineIndicatorSelected",
-  },
-  exclude = {},
-})
-
 local aucmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 

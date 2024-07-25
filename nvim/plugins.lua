@@ -3,8 +3,6 @@ local Plug = vim.fn['plug#']
 
 vim.api.nvim_exec([[
 call plug#begin('~/.config/nvim/autoload/plugged')
-
-  Plug('Leviathenn/nvim-transparent')
   
   Plug('junegunn/goyo.vim')
 
