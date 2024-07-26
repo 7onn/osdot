@@ -21,17 +21,17 @@ layouts:
   # - wide
   - two-pane
   # - middle-wide
-  - 3column-left
+  # - 3column-left
   # - 3column-middle
   # - 3column-right
   # - 4column-left
   # - 4column-right
   # - column
   # - row
-  - floating
+  # - floating
   # - widescreen-tall
   # - widescreen-tall-right
-  # - bsp
+  - bsp
   # custom layouts
   - center
 
@@ -161,6 +161,11 @@ select-fullscreen-layout:
   key: k
 
 select-column-layout: {}
+
+select-bsp-layout:
+  mod: mod2
+  key: "/"
+
 
 select-two-pane-layout:
   mod: mod2
