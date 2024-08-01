@@ -5,4 +5,4 @@ require("diagnostic")
 require("plugins")
 require("styles")
 require("lsp")
-
+require("env")
