@@ -1,5 +1,19 @@
 local vim = vim
 
+-- Keybindings
+vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {silent = true, noremap = true})
+
+vim.api.nvim_set_keymap('n', 'gt', '<Plug>(coc-type-definition)', {silent = true, noremap = true})
+
+vim.api.nvim_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>k', ':lua require("lsp_signature").toggle_float_win()<CR>', {noremap = true})
+
+
 -- Terraform
 require'lspconfig'.terraformls.setup{}
 local fsgtf = vim.api.nvim_create_augroup("TerraformFormat", {})

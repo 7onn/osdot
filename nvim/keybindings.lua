@@ -37,16 +37,6 @@ vim.api.nvim_set_keymap('v', '<C-e>', '$', {noremap = true})
 vim.api.nvim_set_keymap('v', '<C-S-A>', 'V^', {noremap = true})
 vim.api.nvim_set_keymap('v', '<C-S-E>', 'V$', {noremap = true})
 
--- Programming
-vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', 'gt', '<Plug>(coc-type-definition)', {silent = true, noremap = true})
-vim.api.nvim_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true})
-
-
-vim.api.nvim_set_keymap('n', '<Leader>k', ':lua vim.lsp.buf.signature_help()<CR>', {noremap = true})
-
 
 local aucmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
