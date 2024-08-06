@@ -54,16 +54,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Kotlin
 require'lspconfig'.kotlin_language_server.setup{}
--- require'lspconfig'.kotlin_language_server.setup{
---     cmd = { "kotlin-language-server" },
---     filetypes = { "kotlin" },
---     root_dir = function(fname)
---         return require'lspconfig'.util.root_pattern('settings.gradle')(fname) or
---                require'lspconfig'.util.root_pattern('build.gradle')(fname) or
---                require'lspconfig'.util.root_pattern('pom.xml', '.git')(fname) or
---                require'lspconfig'.util.root_pattern('build.gradle.kts')(fname)
---     end,
--- }
 
 local fsgkt = vim.api.nvim_create_augroup("KotlinFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -74,6 +64,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = fsgkt,
 })
 
+-- Function Signatures <leader>+k
 require('lsp_signature').setup({
   bind = true, 
   handler_opts = {
