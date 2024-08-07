@@ -35,7 +35,6 @@
     dir                     # current directory
     vcs                     # git status
     kubecontext             # current kubernetes context (https://kubernetes.io/)
-    terraform               # terraform workspace (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     # =========================[ Line #2 ]=========================
     newline                 # \n
@@ -52,6 +51,7 @@
     command_execution_time  # duration of the last command
     # background_jobs         # presence of background jobs
     # direnv                  # direnv status (https://direnv.net/)
+    terraform               # terraform workspace (https://www.terraform.io)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
@@ -214,6 +214,7 @@
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
@@ -261,13 +262,13 @@
   # respectively.
   typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=false
   # Don't shorten this many last directory segments. They are anchors.
-  typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+  typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=10
   # Shorten directory if it's longer than this even if there is space for it. The value can
   # be either absolute (e.g., '80') or a percentage of terminal width (e.g, '50%'). If empty,
   # directory will be shortened only when prompt doesn't fit or when other parameters demand it
   # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
   # If set to `0`, directory will always be shortened to its minimum length.
-  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=80
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=120
   # When `dir` segment is on the last prompt line, try to shorten it enough to leave at least this
   # many columns for typing commands.
   typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS=40
