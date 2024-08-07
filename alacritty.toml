@@ -19,8 +19,6 @@ text = "CellBackground"
 size = 14
 
 [font.normal]
-#family = "Fira Code"
-family ="JetBrains Mono"
-style = "Light"
-
+family ="Menlo"
+style = "Regular"
 
