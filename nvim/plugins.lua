@@ -27,6 +27,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'mfussenegger/nvim-dap'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+  Plug 'mg979/vim-visual-multi'
+
+
 call plug#end()
 ]], false)
 
