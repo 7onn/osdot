@@ -22,3 +22,28 @@ size = 14
 family ="Menlo"
 style = "Regular"
 
+[[keyboard.bindings]]
+key = "Tab"
+mods = "Control"
+chars = "\u0018n" # tmux next pane
+
+[[keyboard.bindings]]
+key = "Tab"
+mods = "Control|Shift"
+chars = "\u0018p" # tmux prev pane
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Command"
+chars = "\u0018c" # tmux new pane
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Command"
+chars = "\u0018x" # tmux close pane
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Command"
+chars = "\u0018[?" # tmux search up
+
