@@ -24,29 +24,113 @@ o.updatetime = 250
 
 
 -- Netrw
--- built-in file explorer
--- -----
-vim.api.nvim_set_var("netrw_banner", 0)
-vim.api.nvim_set_var("netrw_keepdir", 0)
-vim.api.nvim_set_var("netrw_liststyle", 3)
-vim.api.nvim_set_var("netrw_altfile", 0)
-vim.api.nvim_set_var("netrw_altv", 0)
-vim.api.nvim_set_var("netrw_browse_split", 4)
-vim.api.nvim_set_var("netrw_winsize", 25)
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set("n", "<leader>e", ":Lex<CR>", { noremap = true })
--- vim.cmd([[
---     augroup netrw_mapping
---         autocmd!
---         autocmd filetype netrw call NetrwMapping()
---     augroup END
--- 
---     function! NetrwMapping()
---         nmap <buffer> . gn
---         nmap <buffer> <backspace> -
---         nmap <buffer> <c-l> <c-w>l
---     endfunction
--- 
--- ]])
+vim.keymap.set("n", "t", ":NvimTreeToggle<CR>", { noremap = true })
+local function nvim_tree_on_attach(bufnr)
+    local api = require("nvim-tree.api")
 
+    local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
 
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    vim.keymap.set("n", ".", api.tree.change_root_to_node, opts("Root"))
+    vim.keymap.set("n", "<backspace>", api.tree.change_root_to_parent, opts("Up"))
+    vim.keymap.set("n", "w", api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "s", api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "v", api.node.open.vertical, opts("Open vertical"))
+    vim.keymap.set("n", "h", api.node.open.horizontal, opts("Open horizontal"))
+end
+
+require("nvim-tree").setup({
+    on_attach = nvim_tree_on_attach,
+    disable_netrw = true,
+    sync_root_with_cwd = false,
+    modified = { enable = true },
+    actions = {
+        change_dir = {
+            global = true,
+        },
+    },
+    update_focused_file = {
+        enable = true,
+        update_root = false,
+        ignore_list = {},
+    },
+    view = {
+        signcolumn = "yes",
+        width = "20%",
+    },
+    renderer = {
+        indent_width = 2,
+        indent_markers = {
+            enable = true,
+            inline_arrows = false,
+            icons = {
+                corner = "|",
+                edge = "|",
+                item = "|",
+                bottom = " ",
+                none = "|",
+            },
+        },
+        icons = {
+            web_devicons = {
+                file = {
+                    enable = false,
+                    color = false,
+                },
+                folder = {
+                    enable = false, 
+                    color = false,
+                },
+            },
+            padding = " ",
+            symlink_arrow = " → ",
+            show = {
+                file = false,
+                folder = false,
+                folder_arrow = false,
+                git = false,
+                modified = true,
+                diagnostics = false,
+                bookmarks = false,
+            },
+            glyphs = {
+                default = "",
+                symlink = "",
+                bookmark = "",
+                modified = "+",
+
+                folder = {
+                    arrow_closed = "▸",
+                    arrow_open = "▾",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+            },
+        },
+    },
+    git = {
+        enable = false,
+    },
+    filters = {
+        git_ignored = false,
+        dotfiles = false,
+        git_clean = false,
+        no_buffer = false,
+        no_bookmark = false,
+        custom = {},
+        exclude = {},
+    },
+})

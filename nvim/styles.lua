@@ -171,6 +171,15 @@ function base16()
     hl(0, "LineNrDefault", { ctermfg = cterm02, bold = true })
     hl(0, "StatusLineNoFocus", { ctermfg = cterm03, nocombine = true })
     hl(0, "StatusLineSeparator", { ctermfg = cterm03 })
+
+
+    -- Nvim Tree
+    hl(0, "NvimTreeNormal", { ctermfg = cterm04 })
+    hl(0, "NvimTreeIndentMarker", { ctermfg = cterm03 })
+    hl(0, "NvimTreeRootFolder", { ctermfg = cterm0D })
+    hl(0, "NvimTreeSymlinkFolderName", { ctermfg = cterm0E })
+    hl(0, "NvimTreeSymlink", { ctermfg = cterm0E })
+
 end
 
 base16()

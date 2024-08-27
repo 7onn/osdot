@@ -30,6 +30,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'mg979/vim-visual-multi'
 
+  Plug 'nvim-tree/nvim-web-devicons' " optional
+  Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end()
 ]], false)
