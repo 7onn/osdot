@@ -6,7 +6,7 @@ x= 8
 y= 8
 
 [window]
-opacity=1
+opacity=0.92
 #startup_mode="Fullscreen"
 decorations="Buttonless"
 dynamic_padding=true
@@ -15,11 +15,12 @@ dynamic_padding=true
 cursor = "CellForeground"
 text = "CellBackground"
 
+
 [font]
 size = 14
 
 [font.normal]
-family ="Menlo"
+family ="Fira Code"
 style = "Regular"
 
 [[keyboard.bindings]]
