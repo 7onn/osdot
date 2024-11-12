@@ -20,7 +20,7 @@ text = "CellBackground"
 size = 14
 
 [font.normal]
-family ="Fira Code"
+family ="Hack Nerd Font Mono"
 style = "Regular"
 
 [[keyboard.bindings]]

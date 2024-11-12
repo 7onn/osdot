@@ -24,6 +24,7 @@ alias py='python'
 alias vim='nvim'
 alias v='nvim'
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias code='codium'
 
 
 # User binaries
@@ -42,9 +43,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-zplug 'wfxr/forgit'
 
 
 # Text editing
@@ -60,8 +58,8 @@ if [ -f '~/.zsh/secrets.source' ]; then source '~/.zsh/secrets.source'; fi
 export GOPROXY="https://proxy.golang.org,direct"
 export GOSUMDB="sum.golang.org"
 export GOROOT=/opt/homebrew/opt/go/libexec/
-export GOPATH=~/go
-export GOBIN="~/go/bin"
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
 
 
@@ -79,7 +77,7 @@ export PATH="$HOME/pkg/kotlin-language-server/server/build/scripts:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
-
+#export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -126,4 +124,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Latest shell stuff
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
-

@@ -10,7 +10,7 @@ ln -sf ~/osdot/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf ~/osdot/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/osdot/.zsh ~/.zsh
 ln -sf ~/osdot/nvim ~/.config/nvim
-
+ln -sf ~/osdot/scripts/base16_catppuccin.sh  /Users/tom/.config/base16-shell//scripts/base16-catppuccin.sh
 
 # Git
 ln -sf ~/osdot/.gitconfig ~/.gitconfig
@@ -22,7 +22,7 @@ ln -sf ~/osdot/.aws/chrome-color-helper ~/.aws/chrome-color-helper
 
 ## MacOS specific
 ```
-ln -sf ~/osdot/karabiner.json ~/.config/karabiner/karabiner.json
-ln -sf ~/osdot/.amethyst.yml ~/.amethyst.yml
-ln -sf ~/osdot/amethyst-layout-center.js  ~/Library/Application\ Support/Amethyst/Layouts/center.js
+ln -sf ~/osdot/yabay ~/.config/yabai
+ln -sf ~/osdot/skhd ~/.config/skhd
+ln -sf ~/osdot/sketchybar ~/.config/sketchybar
 ```
