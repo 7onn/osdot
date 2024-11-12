@@ -76,4 +76,4 @@ ctrl + cmd - d : yabai -m window east --resize left:20:0 2> /dev/null || yabai -
 # stop/start/restart yabai
 ctrl + alt - q : yabai --start-stop
 ctrl + alt - s : yabai --start-service
-ctrl + alt - r : brew services restart yabai
+ctrl + alt - r : yabai --restart-service
