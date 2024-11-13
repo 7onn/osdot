@@ -123,5 +123,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Latest shell stuff
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -z "$TMUX"  ] && { exec tmux new-session && exit;}
+[ -z "$TMUX"  ] && { tmux new-session }
 # [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
