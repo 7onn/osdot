@@ -16,10 +16,8 @@ aucmd("TextYankPost", {
 })
 
 
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
-vim.cmd('highlight CursorLine guibg=#44475a')
-vim.cmd('highlight CursorColumn guibg=#44475a')
 
 
 function base16()

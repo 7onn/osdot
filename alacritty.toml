@@ -2,19 +2,14 @@
 TERM="alacritty"
 
 [window.padding]
-x= 8
-y= 8
+x= 16
+y= 16
 
 [window]
-opacity=0.92
+opacity=0.90
 #startup_mode="Fullscreen"
 decorations="Buttonless"
 dynamic_padding=true
-
-[colors.cursor]
-cursor = "CellForeground"
-text = "CellBackground"
-
 
 [font]
 size = 14
@@ -47,4 +42,3 @@ chars = "\u0018x" # tmux close pane
 key = "F"
 mods = "Command"
 chars = "\u0018[?" # tmux search up
-

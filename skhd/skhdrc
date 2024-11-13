@@ -80,3 +80,4 @@ ctrl + alt - r : yabai --restart-service
 
 # new terminal
 alt - t : alacritty msg create-window || alacritty
+
