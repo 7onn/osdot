@@ -1,7 +1,7 @@
 [user]
 email = devbytom@gmail.com
 name = Tom M G
-signingkey = 0x8EF9FCCFA9A4C994
+signingkey = 0x231972E588A12D84
 [commit]
 gpgsign = True
 

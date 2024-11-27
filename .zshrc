@@ -12,7 +12,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-# Aliases
+# Aliase
 alias gs='git status'
 alias cat='bat'
 alias gpull='git pull'
@@ -23,9 +23,12 @@ alias tf='terraform'
 alias py='python'
 alias vim='nvim'
 alias v='nvim'
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
 alias code='codium'
 
+# Brew
+eval "$(/usr/local/bin/brew shellenv)"
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # User binaries
 if [[ -d $HOME/bin ]] export PATH="$HOME/bin:$PATH"
@@ -57,7 +60,7 @@ if [ -f '~/.zsh/secrets.source' ]; then source '~/.zsh/secrets.source'; fi
 # Go
 export GOPROXY="https://proxy.golang.org,direct"
 export GOSUMDB="sum.golang.org"
-export GOROOT=/opt/homebrew/opt/go/libexec/
+export GOROOT=/usr/local/opt/go/libexec/
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
@@ -71,12 +74,12 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export PATH="$HOME/pkg/kotlin-language-server/server/build/scripts:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+# export PATH="$HOME/pkg/kotlin-language-server/server/build/scripts:$PATH"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 #export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 
 # Python
@@ -96,8 +99,8 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/.cargo/env"
+# export PATH="$HOME/.cargo/bin:$PATH"
+# source "$HOME/.cargo/env"
 
 
 # Containers
@@ -109,19 +112,24 @@ source ~/.zsh/functions.zsh
 
 
 # Javascript
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+#export DENO_INSTALL="$HOME/.deno"
+#export PATH="$DENO_INSTALL/bin:$PATH"
+
 
 
 # Package managers
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" 
+#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
+
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+#. "$HOME/.local/bin/env"
 
 # Latest shell stuff
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -z "$TMUX"  ] && { tmux new-session }
-# [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+#[ -z "$TMUX"  ] && { tmux new-session }
+#[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
