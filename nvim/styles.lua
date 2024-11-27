@@ -17,7 +17,7 @@ aucmd("TextYankPost", {
 
 
 -- vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+-- vim.opt.cursorcolumn = true
 
 
 function base16()
