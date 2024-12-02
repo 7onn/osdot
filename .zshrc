@@ -54,8 +54,7 @@ bindkey "\e[1;3D" backward-word # ⌥←
 bindkey "\e[1;3C" forward-word # ⌥→
 
 # Secrets
-if [ -f '~/.zsh/secrets.source' ]; then source '~/.zsh/secrets.source'; fi
-
+if [ -f "$HOME/.zsh/secrets.source" ]; then source "$HOME/.zsh/secrets.source"; fi
 
 # Go
 export GOPROXY="https://proxy.golang.org,direct"
@@ -86,12 +85,16 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+# Created by `pipx` on 2024-12-02 09:29:15
+export PATH="$PATH:/Users/tom/.local/bin"
+# Created by `pipx` on 2024-12-02 09:29:22
+export PATH="$PATH:/Users/tom/Library/Python/3.11/bin"
 
 
 # Google Cloud
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f "$HOME/pkg/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/pkg/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/pkg/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/pkg/google-cloud-sdk/completion.zsh.inc"; fi
 
 
 # Terraform
@@ -132,4 +135,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #[ -z "$TMUX"  ] && { tmux new-session }
 #[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
+
 
