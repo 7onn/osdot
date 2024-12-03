@@ -3,10 +3,11 @@ TERM="alacritty"
 
 [window.padding]
 x= 16
-y= 16
+y= 24
 
 [window]
-opacity=0.90
+opacity=0.875
+#blur=true
 #startup_mode="Fullscreen"
 decorations="Transparent"
 dynamic_padding=true
