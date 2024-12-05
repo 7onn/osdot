@@ -2,7 +2,8 @@ local icons = require("icons")
 local colors = require("colors")
 
 local whitelist = { ["Spotify"] = true,
-                    ["Music"] = true    };
+                    ["Music"] = true,
+                    ["Brave Browser"] = true};
 
 local media_cover = sbar.add("item", {
   position = "right",

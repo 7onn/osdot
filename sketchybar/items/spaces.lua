@@ -26,10 +26,10 @@ for i = 1, 10, 1 do
     padding_right = 1,
     padding_left = 1,
     background = {
-      color = colors.bg1,
-      border_width = 1,
+      color = colors.transparent,
+      border_width = 0,
       height = 26,
-      border_color = colors.black,
+      border_color = colors.transparent,
     },
     popup = { background = { border_width = 5, border_color = colors.black } }
   })
@@ -42,7 +42,7 @@ for i = 1, 10, 1 do
       color = colors.transparent,
       border_color = colors.bg2,
       height = 28,
-      border_width = 2
+      border_width = 0
     }
   })
 
@@ -117,7 +117,7 @@ local spaces_indicator = sbar.add("item", {
   },
   background = {
     color = colors.with_alpha(colors.grey, 0.0),
-    border_color = colors.with_alpha(colors.bg1, 0.0),
+    --border_color = colors.with_alpha(colors.bg1, 0.0),
   }
 })
 
@@ -151,7 +151,7 @@ spaces_indicator:subscribe("mouse.entered", function(env)
     spaces_indicator:set({
       background = {
         color = { alpha = 1.0 },
-        border_color = { alpha = 1.0 },
+        --border_color = { alpha = 1.0 },
       },
       icon = { color = colors.bg1 },
       label = { width = "dynamic" }
@@ -164,7 +164,7 @@ spaces_indicator:subscribe("mouse.exited", function(env)
     spaces_indicator:set({
       background = {
         color = { alpha = 0.0 },
-        border_color = { alpha = 0.0 },
+        --border_color = { alpha = 0.0 },
       },
       icon = { color = colors.grey },
       label = { width = 0, }
