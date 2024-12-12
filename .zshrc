@@ -1,8 +1,8 @@
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        source "$BASE16_SHELL/profile_helper.sh"
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#         source "$BASE16_SHELL/profile_helper.sh"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,7 +24,6 @@ alias py='python'
 alias vim='nvim'
 alias v='nvim'
 
-alias code='codium'
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
@@ -98,7 +97,7 @@ if [ -f "$HOME/pkg/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/pkg/goo
 
 
 # Terraform
-export PATH="$HOME/.tfenv/bin:$PATH"
+#export PATH="$HOME/.tfenv/bin:$PATH"
 
 
 # Rust
