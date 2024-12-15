@@ -19,7 +19,7 @@ awsvl() {
 }
 
 rmbranches(){
-    git branch -D  $(git branch | grep -v "\(\*\|main\|master\)")
+    git branch -D  $(git branch | grep -v "\(\*\|main\|master\|staging\|production\)")
 }
 
 sshls(){
