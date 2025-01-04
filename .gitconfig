@@ -1,7 +1,7 @@
 [user]
 email = tmg.7@icloud.com
 name = Tom M G
-signingkey = 0x231972E588A12D84
+signingkey = 0x90674BFE48C97FB0
 [commit]
 gpgsign = True
 
