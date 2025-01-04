@@ -21,7 +21,7 @@ ln -sf ~/osdot/scripts/base16_catppuccin.sh  /Users/tom/.config/base16-shell//sc
 ln -sf ~/osdot/.gitconfig ~/.gitconfig
 
 # Plugins
-ln -sf ~/osdot/.aws/chrome-color-helper ~/.aws/chrome-color-helper
+ln -sf ~/osdot/.aws/aws-console-color ~/.aws/aws-console-color
 ```
 
 

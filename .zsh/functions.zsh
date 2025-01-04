@@ -8,10 +8,10 @@ aws-console() {
   if [[ $TOKEN =~ "signin.aws.amazon.com" ]]; then
     local data=$(mktemp -d -t google-chrome-XXXXXX)
     open -na "Brave Browser" --args \
-     --no-first-run \
-     --user-data-dir="$data" \
-    --load-extension='~/.aws/chrome-color-helper/' \
-     $TOKEN
+      --no-first-run \
+      --user-data-dir="$data" \
+    --load-extension='~/.aws/aws-console-color/' \
+      $TOKEN
     rm -rf "$data"
   else
     echo "$TOKEN"
