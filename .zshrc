@@ -130,10 +130,20 @@ export NVM_DIR="$HOME/.nvm"
 
 #. "$HOME/.local/bin/env"
 
+export PNPM_HOME="/Users/tom/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+
+
 # Latest shell stuff
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #[ -z "$TMUX"  ] && { tmux new-session }
 #[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
+
 
 
 
