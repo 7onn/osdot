@@ -1,4 +1,4 @@
-awsvl() {
+aws-console() {
   if [[ $# -eq 0 ]]; then
     local TOKEN="$(aws-vault list | grep '\-vault' | cut -d' ' -f1| fzf | xargs aws-vault login -d 1h -s)"
   else
@@ -7,7 +7,7 @@ awsvl() {
 
   if [[ $TOKEN =~ "signin.aws.amazon.com" ]]; then
     local data=$(mktemp -d -t google-chrome-XXXXXX)
-    open -na "Google Chrome" --args \
+    open -na "Brave Browser" --args \
      --no-first-run \
      --user-data-dir="$data" \
     --load-extension='~/.aws/chrome-color-helper/' \
