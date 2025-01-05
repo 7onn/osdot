@@ -33,6 +33,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-tree/nvim-web-devicons' " optional
   Plug 'nvim-tree/nvim-tree.lua'
 
+  Plug 'rebelot/kanagawa.nvim'
+
 call plug#end()
 ]], false)
 

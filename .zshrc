@@ -40,7 +40,7 @@ gpgconf --launch gpg-agent
 
 
 # Terminal hacks
-source ~/.zsh/z.source
+source ~/.zsh/z.zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
@@ -53,7 +53,7 @@ bindkey "\e[1;3D" backward-word # ⌥←
 bindkey "\e[1;3C" forward-word # ⌥→
 
 # Secrets
-if [ -f "$HOME/.zsh/secrets.source" ]; then source "$HOME/.zsh/secrets.source"; fi
+if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
 
 # Go
 export GOPROXY="https://proxy.golang.org,direct"
@@ -67,7 +67,7 @@ export PATH="$PATH:$GOBIN"
 # Kubernetes
 export KUBE_CONFIG_PATH=~/.kube/config
 source ~/.zsh/k8s.zsh
-source ~/.zsh/fubectl.source
+source ~/.zsh/fubectl.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 

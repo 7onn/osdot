@@ -7,7 +7,7 @@ y= 24
 
 [window]
 opacity=0.85
-#blur=true
+blur=true
 #startup_mode="Fullscreen"
 decorations="Transparent"
 dynamic_padding=true
@@ -45,80 +45,121 @@ mods = "Command"
 chars = "\u0018[?" # tmux search up
 
 
-
-
+#
+# KANAGAWA WAVE
+#
 [colors.primary]
-background = '#1E1E2E' # base
-foreground = '#CDD6F4' # text
-# Bright and dim foreground colors
-dim_foreground = '#CDD6F4' # text
-bright_foreground = '#CDD6F4' # text
+background = '#1f1f28'
+foreground = '#dcd7ba'
 
-# Cursor colors
-[colors.cursor]
-text = '#1E1E2E' # base
-cursor = '#F5E0DC' # rosewater
-
-[colors.vi_mode_cursor]
-text = '#1E1E2E' # base
-cursor = '#B4BEFE' # lavender
-
-# Search colors
-[colors.search.matches]
-foreground = '#1E1E2E' # base
-background = '#A6ADC8' # subtext0
-
-[colors.search.focused_match]
-foreground = '#1E1E2E' # base
-background = '#A6E3A1' # green
-
-[colors.footer_bar]
-foreground = '#1E1E2E' # base
-background = '#A6ADC8' # subtext0
-
-# Keyboard regex hints
-[colors.hints.start]
-foreground = '#1E1E2E' # base
-background = '#F9E2AF' # yellow
-
-[colors.hints.end]
-foreground = '#1E1E2E' # base
-background = '#A6ADC8' # subtext0
-
-# Selection colors
-[colors.selection]
-text = '#1E1E2E' # base
-background = '#F5E0DC' # rosewater
-
-# Normal colors
 [colors.normal]
-black = '#45475A' # surface1
-red = '#F38BA8' # red
-green = '#A6E3A1' # green
-yellow = '#F9E2AF' # yellow
-blue = '#89B4FA' # blue
-magenta = '#F5C2E7' # pink
-cyan = '#94E2D5' # teal
-white = '#BAC2DE' # subtext1
+black   = '#090618'
+red     = '#c34043'
+green   = '#76946a'
+yellow  = '#c0a36e'
+blue    = '#7e9cd8'
+magenta = '#957fb8'
+cyan    = '#6a9589'
+white   = '#c8c093'
 
-# Bright colors
 [colors.bright]
-black = '#585B70' # surface2
-red = '#F38BA8' # red
-green = '#A6E3A1' # green
-yellow = '#F9E2AF' # yellow
-blue = '#89B4FA' # blue
-magenta = '#F5C2E7' # pink
-cyan = '#94E2D5' # teal
-white = '#A6ADC8' # subtext0
+black   = '#727169'
+red     = '#e82424'
+green   = '#98bb6c'
+yellow  = '#e6c384'
+blue    = '#7fb4ca'
+magenta = '#938aa9'
+cyan    = '#7aa89f'
+white   = '#dcd7ba'
 
-# Dim colors
-[colors.dim]
-black = '#45475A' # surface1
-red = '#F38BA8' # red
-green = '#A6E3A1' # green
-yellow = '#F9E2AF' # yellow
-blue = '#89B4FA' # blue
-magenta = '#F5C2E7' # pink
-cyan = '#94E2D5' # teal
-white = '#BAC2DE' # subtext1
+[colors.selection]
+background = '#2d4f67'
+foreground = '#c8c093'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#ffa066'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#ff5d62'
+
+
+#
+# SEI LA
+#
+# [colors.primary]
+# background = '#1E1E2E' # base
+# foreground = '#CDD6F4' # text
+# # Bright and dim foreground colors
+# dim_foreground = '#CDD6F4' # text
+# bright_foreground = '#CDD6F4' # text
+# 
+# # Cursor colors
+# [colors.cursor]
+# text = '#1E1E2E' # base
+# cursor = '#F5E0DC' # rosewater
+# 
+# [colors.vi_mode_cursor]
+# text = '#1E1E2E' # base
+# cursor = '#B4BEFE' # lavender
+# 
+# # Search colors
+# [colors.search.matches]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+# 
+# [colors.search.focused_match]
+# foreground = '#1E1E2E' # base
+# background = '#A6E3A1' # green
+# 
+# [colors.footer_bar]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+# 
+# # Keyboard regex hints
+# [colors.hints.start]
+# foreground = '#1E1E2E' # base
+# background = '#F9E2AF' # yellow
+# 
+# [colors.hints.end]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+# 
+# # Selection colors
+# [colors.selection]
+# text = '#1E1E2E' # base
+# background = '#F5E0DC' # rosewater
+# 
+# # Normal colors
+# [colors.normal]
+# black = '#45475A' # surface1
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#BAC2DE' # subtext1
+# 
+# # Bright colors
+# [colors.bright]
+# black = '#585B70' # surface2
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#A6ADC8' # subtext0
+# 
+# # Dim colors
+# [colors.dim]
+# black = '#45475A' # surface1
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#BAC2DE' # subtext1
