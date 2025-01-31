@@ -55,7 +55,7 @@ function add_journal_entry()
      vim.api.nvim_put(
       {
         "# " .. date .. " ",
-        "- "
+        ""
       }, 'l', true, true)
 end
 
