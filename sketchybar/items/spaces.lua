@@ -18,9 +18,10 @@ for i = 1, 10, 1 do
     },
     label = {
       padding_right = 20,
-      color = colors.grey,
-      --background_color = colors.grey,
-      highlight_color = colors.magenta,
+      color = colors.magenta,
+      -- background_color = colors.magenta,
+      highlight_color = colors.green,
+      
       font = "sketchybar-app-font:Regular:16.0",
       y_offset = -1,
     },
@@ -28,7 +29,7 @@ for i = 1, 10, 1 do
     padding_left = 1,
     background = {
       color = colors.transparent,
-      border_width = 0,
+      border_width = -1,
       height = 26,
       border_color = colors.magenta,
     },
