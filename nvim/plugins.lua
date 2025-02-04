@@ -35,6 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'rebelot/kanagawa.nvim'
 
+  Plug 'nvim-focus/focus.nvim'
+
 call plug#end()
 ]], false)
 
