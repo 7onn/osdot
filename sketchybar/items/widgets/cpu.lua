@@ -59,7 +59,7 @@ end)
 
 -- Background around the cpu item
 sbar.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
-  background = { color = colors.transparent }
+  background = { color = colors.bg2 }
 })
 
 -- Background around the cpu item

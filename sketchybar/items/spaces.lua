@@ -13,13 +13,14 @@ for i = 1, 10, 1 do
       string = i,
       padding_left = 15,
       padding_right = 8,
-      color = colors.white,
-      highlight_color = colors.red,
+      color = colors.magenta,
+      highlight_color = colors.magenta,
     },
     label = {
       padding_right = 20,
       color = colors.grey,
-      highlight_color = colors.white,
+      --background_color = colors.grey,
+      highlight_color = colors.magenta,
       font = "sketchybar-app-font:Regular:16.0",
       y_offset = -1,
     },
@@ -29,7 +30,7 @@ for i = 1, 10, 1 do
       color = colors.transparent,
       border_width = 0,
       height = 26,
-      border_color = colors.transparent,
+      border_color = colors.magenta,
     },
     popup = { background = { border_width = 5, border_color = colors.black } }
   })
@@ -40,9 +41,9 @@ for i = 1, 10, 1 do
   local space_bracket = sbar.add("bracket", { space.name }, {
     background = {
       color = colors.transparent,
-      border_color = colors.bg2,
+      border_color = colors.magenta,
       height = 28,
-      border_width = 0
+      border_width = 2,
     }
   })
 
@@ -60,7 +61,7 @@ for i = 1, 10, 1 do
     background = {
       drawing = true,
       image = {
-        corner_radius = 9,
+        --corner_radius = 9,
         scale = 0.2
       }
     }
@@ -105,7 +106,7 @@ local spaces_indicator = sbar.add("item", {
   icon = {
     padding_left = 8,
     padding_right = 9,
-    color = colors.grey,
+    color = colors.green,
     string = icons.switch.on,
   },
   label = {
@@ -116,8 +117,8 @@ local spaces_indicator = sbar.add("item", {
     color = colors.bg1,
   },
   background = {
-    color = colors.with_alpha(colors.grey, 0.0),
-    --border_color = colors.with_alpha(colors.bg1, 0.0),
+    color = colors.with_alpha(colors.magenta, 0.0),
+    border_color = colors.with_alpha(colors.magenta, 0.0),
   }
 })
 
@@ -151,7 +152,7 @@ spaces_indicator:subscribe("mouse.entered", function(env)
     spaces_indicator:set({
       background = {
         color = { alpha = 1.0 },
-        --border_color = { alpha = 1.0 },
+        border_color = { alpha = 1.0 },
       },
       icon = { color = colors.bg1 },
       label = { width = "dynamic" }
@@ -164,7 +165,7 @@ spaces_indicator:subscribe("mouse.exited", function(env)
     spaces_indicator:set({
       background = {
         color = { alpha = 0.0 },
-        --border_color = { alpha = 0.0 },
+        border_color = { alpha = 0.0 },
       },
       icon = { color = colors.grey },
       label = { width = 0, }
