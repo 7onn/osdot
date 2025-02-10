@@ -37,6 +37,8 @@ yabai -m config external_bar all:$(sketchybar --query bar | jq .height):0
 yabai -m config layout bsp
 
 # transparency
-yabai -m config window_opacity on
-yabai -m config active_window_opacity 0.50
-yabai -m config normal_window_opacity 0.2
+#yabai -m config window_opacity on
+#yabai -m config active_window_opacity 0.50
+#yabai -m config normal_window_opacity 0.2
+
+borders active_color=0xff9ed072 inactive_color=0xffb39df3 width=5.0 &
