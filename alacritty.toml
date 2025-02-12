@@ -6,14 +6,14 @@ x= 16
 y= 24
 
 [window]
-opacity=0.95
-blur=true
+opacity=0.85
+#blur=true
 #startup_mode="Fullscreen"
 decorations="Transparent"
 dynamic_padding=true
 
 [font]
-size = 14
+size = 12
 
 [font.normal]
 family ="Hack Nerd Font Mono"

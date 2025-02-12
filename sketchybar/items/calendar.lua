@@ -28,7 +28,7 @@ local cal = sbar.add("item", {
 -- Double border for calendar using a single item bracket
 sbar.add("bracket", { cal.name }, {
   background = {
-    color = colors.bg2,
+    color = colors.transparent,
   }
 })
 

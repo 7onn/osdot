@@ -27,11 +27,11 @@ sbar.default({
   },
   background = {
     height = 26,
-    corner_radius = 3,
+    corner_radius = 14,
     border_width = 0,
     border_color = colors.magenta,
     image = {
-      corner_radius = 3,
+      corner_radius = 14,
       border_color = colors.magenta,
       border_width = 0
     }
@@ -39,7 +39,7 @@ sbar.default({
   popup = {
     background = {
       border_width = 0,
-      corner_radius = 3,
+      corner_radius = 14,
       border_color = colors.popup.border,
       color = colors.popup.bg,
       shadow = { drawing = true },
