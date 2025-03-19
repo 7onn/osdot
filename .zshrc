@@ -27,7 +27,7 @@ alias v='nvim'
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # User binaries
 if [[ -d $HOME/bin ]] export PATH="$HOME/bin:$PATH"
@@ -81,9 +81,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 
 # Python
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 # Created by `pipx` on 2024-12-02 09:29:15
 export PATH="$PATH:/Users/tom/.local/bin"
 # Created by `pipx` on 2024-12-02 09:29:22
