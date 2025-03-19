@@ -20,6 +20,6 @@ if (!account) {
         '[data-testid="awsc-nav-account-menu-button"]>span[title]'
       ).textContent = account.name;
     }
-  }, 1000)
+  }, 2000)
 }
 
