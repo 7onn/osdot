@@ -93,16 +93,14 @@ export PATH="$PATH:/Users/tom/Library/Python/3.11/bin"
 # Google Cloud
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/application_default_credentials.json"
 if [ -f "$HOME/pkg/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/pkg/google-cloud-sdk/path.zsh.inc"; fi
-if [ -f "$HOME/pkg/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/pkg/google-cloud-sdk/completion.zsh.inc"; fi
-
 
 # Terraform
 #export PATH="$HOME/.tfenv/bin:$PATH"
 
 
 # Rust
-# export PATH="$HOME/.cargo/bin:$PATH"
-# source "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 
 
 # Containers
@@ -120,11 +118,8 @@ source ~/.zsh/functions.zsh
 
 
 # Package managers
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" 
-#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
-
+eval "$(fnm env --use-on-cd --shell zsh)"
+alias nvm='fnm'
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
