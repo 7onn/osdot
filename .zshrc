@@ -4,15 +4,8 @@
 #     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 #         source "$BASE16_SHELL/profile_helper.sh"
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
-
-# Aliase
+# Aliases
 alias gs='git status'
 alias cat='bat'
 alias gpull='git pull'
@@ -23,7 +16,7 @@ alias tf='terraform'
 alias py='python'
 alias vim='nvim'
 alias v='nvim'
-
+alias ll='ls -alht'
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
@@ -38,19 +31,12 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-
-# Terminal hacks
-source ~/.zsh/z.zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
-
 # Text editing
 export EDITOR=nvim
 bindkey "\e[1;3D" backward-word # ⌥←
 bindkey "\e[1;3C" forward-word # ⌥→
+# bindkey "\e[1;5D" backward-word   # ^←
+# bindkey "\e[1;5C" forward-word    # ^→
 
 # Secrets
 if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
@@ -66,7 +52,7 @@ export PATH="$PATH:$GOBIN"
 
 # Kubernetes
 export KUBE_CONFIG_PATH=~/.kube/config
-source ~/.zsh/k8s.zsh
+#source ~/.zsh/k8s.zsh
 source ~/.zsh/fubectl.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
@@ -132,13 +118,55 @@ case ":$PATH:" in
 esac
 
 
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[0;33m"
+BLUE="\033[0;34m"
+MAGENTA="\033[0;35m"
+CYAN="\033[0;36m"
+WHITE="\033[0;37m"
+RESET="\033[0m"
+ROXIN="\033[38;5;183m"
 
-# Latest shell stuff
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-#[ -z "$TMUX"  ] && { tmux new-session }
-#[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+function dir_ps1() {
+  echo -e "${ROXIN}⭐$(pwd)${RESET}"
+}
+
+function git_ps1() {
+  branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
+  if [[ -n "$branch" ]]; then
+    if [[ -n "$(git diff --name-only HEAD)" ]]; then
+      echo -e "${YELLOW}± ${branch}*${RESET}
+"
+    else
+      echo -e "${GREEN}± ${branch}${RESET}
+"
+    fi
+  fi
+}
+
+function kube_ps1() {
+  local ctx=$(kubectl config current-context 2>/dev/null)
+  [[ -z "$ctx" ]] && return
+
+  local ns=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
+  [[ -z "$ns" ]] && ns="default"
+  
+  if [[ -n "$ctx" ]]; then
+    # Color context red if it contains 'prod'
+    if [[ "$ctx" == *"production"* ]]; then
+      echo -e "${RED}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
+    else
+      echo -e "${GREEN}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
+    fi
+  fi
+}
 
 
+function _update_ps1() {
+  PS1="%1 $(dir_ps1) $(git_ps1) $(kube_ps1) 
+$ "
+}
 
-
-
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _update_ps1

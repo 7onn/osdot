@@ -7,7 +7,7 @@ y= 24
 
 [window]
 opacity=0.85
-blur=true
+#blur=true
 #startup_mode="Fullscreen"
 decorations="Transparent"
 dynamic_padding=true
