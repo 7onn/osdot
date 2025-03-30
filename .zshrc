@@ -33,6 +33,11 @@ export EDITOR=nvim
 bindkey "\e[1;3D" backward-word # ⌥←
 bindkey "\e[1;3C" forward-word # ⌥→
 
+# reverse search with ctrl r
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+
 # Secrets
 if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
 
