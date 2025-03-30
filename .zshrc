@@ -1,9 +1,4 @@
-# Base16 Shell
-# BASE16_SHELL="$HOME/.config/base16-shell/"
-# [ -n "$PS1" ] && \
-#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#         source "$BASE16_SHELL/profile_helper.sh"
-
+. ~/.zsh/ps1.zsh
 
 # Aliases
 alias gs='git status'
@@ -17,6 +12,8 @@ alias py='python'
 alias vim='nvim'
 alias v='nvim'
 alias ll='ls -alht'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
@@ -35,8 +32,6 @@ gpgconf --launch gpg-agent
 export EDITOR=nvim
 bindkey "\e[1;3D" backward-word # ⌥←
 bindkey "\e[1;3C" forward-word # ⌥→
-# bindkey "\e[1;5D" backward-word   # ^←
-# bindkey "\e[1;5C" forward-word    # ^→
 
 # Secrets
 if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
@@ -117,56 +112,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-YELLOW="\033[0;33m"
-BLUE="\033[0;34m"
-MAGENTA="\033[0;35m"
-CYAN="\033[0;36m"
-WHITE="\033[0;37m"
-RESET="\033[0m"
-ROXIN="\033[38;5;183m"
-
-function dir_ps1() {
-  echo -e "${ROXIN}⭐$(pwd)${RESET}"
-}
-
-function git_ps1() {
-  branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
-  if [[ -n "$branch" ]]; then
-    if [[ -n "$(git diff --name-only HEAD)" ]]; then
-      echo -e "${YELLOW}± ${branch}*${RESET}
-"
-    else
-      echo -e "${GREEN}± ${branch}${RESET}
-"
-    fi
-  fi
-}
-
-function kube_ps1() {
-  local ctx=$(kubectl config current-context 2>/dev/null)
-  [[ -z "$ctx" ]] && return
-
-  local ns=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
-  [[ -z "$ns" ]] && ns="default"
-  
-  if [[ -n "$ctx" ]]; then
-    # Color context red if it contains 'prod'
-    if [[ "$ctx" == *"production"* ]]; then
-      echo -e "${RED}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
-    else
-      echo -e "${GREEN}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
-    fi
-  fi
-}
-
-
-function _update_ps1() {
-  PS1="%1 $(dir_ps1) $(git_ps1) $(kube_ps1) 
-$ "
-}
-
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd _update_ps1
