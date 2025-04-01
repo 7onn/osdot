@@ -26,6 +26,7 @@ export EDITOR=nvim
 
 # Secrets
 if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
+if [ -f "$HOME/.zsh/nada.zsh" ]; then source "$HOME/.zsh/nada.zsh"; fi
 
 # Go
 export GOPROXY="https://proxy.golang.org,direct"
