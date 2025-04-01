@@ -47,7 +47,7 @@ function kube_ps1() {
 
 function _update_ps1() {
   PS1="%1 
-$(dir_ps1) $(git_ps1) $(kube_ps1) $(date)
+$(dir_ps1) $(git_ps1) $(kube_ps1) $(date +'%A %Y-%m-%d %H:%M:%S %z')
 $ "
 }
 

@@ -1,0 +1,15 @@
+
+# Aliases
+alias gs='git status'
+alias cat='bat'
+alias gpull='git pull'
+alias gpush='git push'
+alias gcheckout='git checkout'
+alias lsort='ls -alht'
+alias tf='terraform'
+alias py='python'
+alias vim='nvim'
+alias v='nvim'
+alias ll='ls -alht'
+alias ..='cd ..'
+alias ...='cd ../..'

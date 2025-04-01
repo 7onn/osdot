@@ -1,19 +1,13 @@
+#!/bin/zsh
+
+# cool ps1
 . ~/.zsh/ps1.zsh
 
-# Aliases
-alias gs='git status'
-alias cat='bat'
-alias gpull='git pull'
-alias gpush='git push'
-alias gcheckout='git checkout'
-alias lsort='ls -alht'
-alias tf='terraform'
-alias py='python'
-alias vim='nvim'
-alias v='nvim'
-alias ll='ls -alht'
-alias ..='cd ..'
-alias ...='cd ../..'
+# aliases
+. ~/.zsh/aliases.zsh
+
+# bindkeys
+. ~/.zsh/bindkeys.zsh
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
@@ -22,7 +16,6 @@ eval "$(/usr/local/bin/brew shellenv)"
 # User binaries
 if [[ -d $HOME/bin ]] export PATH="$HOME/bin:$PATH"
 
-
 # SSH and GPG agents
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -30,13 +23,6 @@ gpgconf --launch gpg-agent
 
 # Text editing
 export EDITOR=nvim
-bindkey "\e[1;3D" backward-word # ⌥←
-bindkey "\e[1;3C" forward-word # ⌥→
-
-# reverse search with ctrl r
-bindkey -v
-bindkey '^R' history-incremental-search-backward
-
 
 # Secrets
 if [ -f "$HOME/.zsh/secrets.zsh" ]; then source "$HOME/.zsh/secrets.zsh"; fi
@@ -52,10 +38,9 @@ export PATH="$PATH:$GOBIN"
 
 # Kubernetes
 export KUBE_CONFIG_PATH=~/.kube/config
-#source ~/.zsh/k8s.zsh
-source ~/.zsh/fubectl.zsh
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+. ~/.zsh/k8s.zsh
+. ~/.zsh/fubectl.zsh
 
 # Java
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -116,4 +101,3 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-
