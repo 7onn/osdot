@@ -24,9 +24,10 @@ function _isClusterSpaceObject() {
 
 # [k] like g for git but 233% as effective!
 alias k="kubectl"
+#complete -o default -F __start_kubectl k
 
 # [kw] watch resources of any KIND in current namespace, usage: kw KIND[,KIND2,...]
-alias kw="watch kubectl get"
+alias kw="${FUBECTL_WATCH_CMD:-watch} kubectl get"
 
 # [ka] get all pods from current namespace
 alias ka="kubectl get pods"
@@ -35,10 +36,10 @@ alias ka="kubectl get pods"
 alias kall="kubectl get pods --all-namespaces"
 
 # [kwa] watch all pods in current namespace
-alias kwa="watch kubectl get pods"
+alias kwa="${FUBECTL_WATCH_CMD:-watch} kubectl get pods"
 
 # [kwall] watch all pods in cluster
-alias kwall="watch kubectl get pods --all-namespaces"
+alias kwall="${FUBECTL_WATCH_CMD:-watch} kubectl get pods --all-namespaces"
 
 # TODO use "open" instead of "xdg-open" on a mac - also redirect xdg-open std{out,err} to /dev/null
 # [kp] open kubernetes dashboard with proxy
@@ -47,16 +48,16 @@ alias kp="xdg-open 'http://localhost:8001/api/v1/namespaces/kube-system/services
 # [kwatchn] watch a resource of KIND in current namespace, usage: kwatchn [KIND] - if KIND is empty then pod is used
 function kwatchn() {
     local kind="${1:-pod}"
-    kubectl get "${kind}" | _inline_fzf | awk '{print $1}' | xargs -r watch kubectl get "${kind}"
+    kubectl get "${kind}" | _inline_fzf | awk '{print $1}' | xargs -r ${FUBECTL_WATCH_CMD:-watch} kubectl get "${kind}"
 }
 
 # [kwatch] watch a resource of KIND in cluster, usage: kwatch [KIND] - if KIND is empty then pod is used
 function kwatch() {
     local kind="${1:-pod}"
     if _isClusterSpaceObject "$kind" ; then
-        kubectl get "${kind}" | _inline_fzf | awk '{print $1}' | xargs -r watch kubectl get "${kind}"
+        kubectl get "${kind}" | _inline_fzf | awk '{print $1}' | xargs -r ${FUBECTL_WATCH_CMD:-watch} kubectl get "${kind}"
     else
-        kubectl get "${kind}" --all-namespaces | _inline_fzf | awk '{print $1, $2}' | xargs -r watch kubectl get "${kind}" -n
+        kubectl get "${kind}" --all-namespaces | _inline_fzf | awk '{print $1, $2}' | xargs -r ${FUBECTL_WATCH_CMD:-watch} kubectl get "${kind}" -n
     fi
 }
 
@@ -66,9 +67,9 @@ function kcmd() {
     local image="${2:-ubuntu}"
     local ns="$(kubectl get ns | _inline_fzf | awk '{print $1}')"
     if [ -n "$cmd" ]; then
-        kubectl run shell-$RANDOM --namespace $ns --rm -i --tty --image ${image} -- /bin/sh -c "${cmd}"
+        kubectl run shell-$RANDOM --pod-running-timeout 600s --namespace $ns --rm -i --tty --image ${image} -- /bin/sh -c "${cmd}"
     else
-        kubectl run shell-$RANDOM --namespace $ns --rm -i --tty --image ${image} -- /bin/bash
+        kubectl run shell-$RANDOM --pod-running-timeout 600s --namespace $ns --rm -i --tty --image ${image} -- /bin/bash
     fi
 }
 
@@ -268,7 +269,7 @@ function ksearch() {
 }
 
 # [kcl] context list
-alias kcl='kubectl config get-contexts'
+[ -z "${FUBECTL_NO_KCL}" ] && alias kcl='kubectl config get-contexts'
 
 # [kcs] context set
 function kcs() {
@@ -290,7 +291,7 @@ function kcns() {
 function kwns() {
     local ns=$(kubectl get ns | _inline_fzf | awk '{print $1}')
     [ -z "$ns" ] && printf "kcns: no namespace selected/found.\nUsage: kwns\n" && return
-    watch kubectl get pod -n "$ns"
+    ${FUBECTL_WATCH_CMD:-watch} kubectl get pod -n "$ns"
 }
 
 # [ktreen] prints a tree of k8s objects from current namespace, usage: ktreen [KIND]
@@ -313,6 +314,18 @@ function ktree() {
     else
         kubectl get "$kind" --all-namespaces | _inline_fzf | awk '{print $1, $2}' | xargs -r kubectl tree "$kind" -n
     fi
+}
+
+# [kssh] select the external node IP to connect to the node via SSH. If external IP is not set, internal IP is used.
+function kssh() {
+    local user=${1:-root}
+    local node_name="$(kubectl get node -o wide | _inline_fzf | awk '{print $1}')"
+    local node_ext_ip="$(kubectl get node -o wide --no-headers $node_name | awk '{print $7}')"
+    if [[ "$node_ext_ip" == "<none>" ]]; then
+      local node_ext_ip="$(kubectl get node -o wide --no-headers $node_name  | awk '{print $6}')"
+    fi
+    echo "ssh $user@$node_ext_ip"
+    ssh $user@$node_ext_ip
 }
 
 # [konsole] create root shell on a node
@@ -391,12 +404,37 @@ function kupdate() {
     kubectl krew upgrade
 }
 
+# [krrs] restart resource of KIND, usage: krrs [KIND] - if KIND is empty then deployment is used
+function krrs() {
+    local kind="${1:-deploy}"
+    kubectl get "$kind" --all-namespaces | _inline_fzf | awk '{print $1, $2}' | xargs -r kubectl rollout restart "$kind" -n
+}
+
+# [krrsn] restart resource of KIND in current namespace, usage: krrsn [KIND] - if KIND is empty then deployment is used
+function krrsn() {
+    local kind="${1:-deploy}"
+    kubectl get "$kind" | _inline_fzf | awk '{print $1}' | xargs -r kubectl rollout restart "$kind"
+}
+
+# [krst] status of resource of KIND, usage: krst [KIND] - if KIND is empty then deployment is used
+function krst() {
+    local kind="${1:-deploy}"
+    kubectl get "$kind" --all-namespaces | _inline_fzf | awk '{print $1, $2}' | xargs -r kubectl rollout status "$kind" -n
+}
+
+# [krstn] status resource of KIND in current namespace, usage: krstn [KIND] - if KIND is empty then deployment is used
+function krstn() {
+    local kind="${1:-deploy}"
+    kubectl get "$kind" | _inline_fzf | awk '{print $1}' | xargs -r kubectl rollout status "$kind"
+}
+
 #### Kubermatic KKP specific
 # [kkp-cluster] Kubermatic KKP - extracts kubeconfig of user cluster and connects it in a new bash
 function kkp-cluster() {
     TMP_KUBECONFIG=$(mktemp)
     local cluster="$(kubectl get cluster | _inline_fzf | awk '{print $1}')"
     kubectl get secret admin-kubeconfig -n cluster-$cluster -o go-template='{{ index .data "kubeconfig" | base64decode }}' > $TMP_KUBECONFIG
+    kubectl --kubeconfig $TMP_KUBECONFIG config rename-context default cluster-$cluster
     KUBECONFIG=$TMP_KUBECONFIG $SHELL
 }
 

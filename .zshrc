@@ -1,13 +1,9 @@
 #!/bin/zsh
 
-# cool ps1
-. ~/.zsh/ps1.zsh
-
-# aliases
-. ~/.zsh/aliases.zsh
-
-# bindkeys
-. ~/.zsh/bindkeys.zsh
+# enable completion
+zstyle ':completion:*' menu select
+autoload -U compinit && compinit
+zmodload -i zsh/complist
 
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
@@ -40,8 +36,17 @@ export PATH="$PATH:$GOBIN"
 # Kubernetes
 export KUBE_CONFIG_PATH=~/.kube/config
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-. ~/.zsh/k8s.zsh
 . ~/.zsh/fubectl.zsh
+
+# Cool ps1
+. ~/.zsh/ps1.zsh
+
+# Aliases
+. ~/.zsh/aliases.zsh
+
+# Bindkeys
+. ~/.zsh/bindkeys.zsh
+
 
 # Java
 # export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

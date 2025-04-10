@@ -28,13 +28,16 @@ function git_ps1() {
 }
 
 function kube_ps1() {
-  local ctx=$(kubectl config current-context 2>/dev/null)
-  [[ -z "$ctx" ]] && return
+  #local ctx=$(kubectl config current-context 2>/dev/null)
+  #[[ -z "$ctx" ]] && return
 
-  local ns=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
-  [[ -z "$ns" ]] && ns="default"
+  #local ns=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
+  #[[ -z "$ns" ]] && ns="default"
   
+  # fubectl vars
+  local ctx="$(kube_ctx_name)"
   if [[ -n "$ctx" ]]; then
+    local ns="$(kube_ctx_namespace)"
     # Color context red if it contains 'prod'
     if [[ "$ctx" == *"production"* ]]; then
       echo -e "${RED}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
