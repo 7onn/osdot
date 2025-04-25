@@ -9,9 +9,9 @@
 # padding set to 12px
 yabai -m config top_padding 5
 yabai -m config bottom_padding 49
-yabai -m config left_padding 26
-yabai -m config right_padding 29
-yabai -m config window_gap 26
+yabai -m config left_padding 23
+yabai -m config right_padding 26
+yabai -m config window_gap 20
 
 # -- mouse settings --
 
@@ -41,4 +41,4 @@ yabai -m config layout bsp
 #yabai -m config active_window_opacity 0.50
 #yabai -m config normal_window_opacity 0.2
 
-borders active_color=0xff9ed072 inactive_color=0xffb39df3 width=10.0 &
+borders active_color=0xff9ed072 inactive_color=0xffb39df3 width=7.0 &

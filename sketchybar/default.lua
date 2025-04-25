@@ -27,11 +27,11 @@ sbar.default({
   },
   background = {
     height = 26,
-    corner_radius = 14,
+    corner_radius = 3,
     border_width = 0,
     border_color = colors.magenta,
     image = {
-      corner_radius = 14,
+      corner_radius = 3,
       border_color = colors.magenta,
       border_width = 0
     }
