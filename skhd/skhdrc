@@ -79,5 +79,5 @@ ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 
 # new terminal
-alt - t : alacritty msg create-window || alacritty
-
+# alt - t : alacritty msg create-window || alacritty
+alt - t : /Applications/kitty.app/Contents/MacOS/kitty --directory="$HOME"

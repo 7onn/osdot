@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# prevent CTRL-D from closing Kitty
+setopt ignore_eof
+
 # enable completion
 zstyle ':completion:*' menu select
 autoload -U compinit && compinit
@@ -107,3 +110,4 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"

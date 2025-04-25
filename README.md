@@ -6,16 +6,14 @@ Stores config for some tools in my machine
 # terminal stuff
 ln -sf ~/osdot/.tmux.conf ~/.tmux.conf
 ln -sf ~/osdot/.zshrc ~/.zshrc
-ln -sf ~/osdot/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -sf ~/osdot/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/osdot/.zsh ~/.zsh
+ln -sf ~/osdot/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 # nvim
 ## https://github.com/junegunn/vim-plug
 ## https://github.com/neovim/nvim-lspconfig
 ln -sf ~/osdot/nvim ~/.config/nvim
-
-ln -sf ~/osdot/scripts/base16_catppuccin.sh  /Users/tom/.config/base16-shell//scripts/base16-catppuccin.sh
 
 # Git
 ln -sf ~/osdot/.gitconfig ~/.gitconfig
