@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug('junegunn/fzf.vim')
   Plug('nvim-treesitter/nvim-treesitter')
+  Plug('nvim-treesitter/nvim-treesitter-context')
 
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }

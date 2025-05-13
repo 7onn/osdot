@@ -76,7 +76,7 @@ require("nvim-tree").setup({
         indent_width = 2,
         indent_markers = {
             enable = true,
-            inline_arrows = false,
+            inline_arrows = true,
             icons = {
                 corner = "|",
                 edge = "|",
@@ -88,21 +88,21 @@ require("nvim-tree").setup({
         icons = {
             web_devicons = {
                 file = {
-                    enable = false,
-                    color = false,
+                    enable = true,
+                    color = true,
                 },
                 folder = {
-                    enable = false, 
-                    color = false,
+                    enable = true, 
+                    color = true,
                 },
             },
             padding = " ",
             symlink_arrow = " → ",
             show = {
-                file = false,
-                folder = false,
-                folder_arrow = false,
-                git = false,
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
                 modified = true,
                 diagnostics = false,
                 bookmarks = false,
@@ -116,9 +116,9 @@ require("nvim-tree").setup({
                 folder = {
                     arrow_closed = "▸",
                     arrow_open = "▾",
-                    default = "",
-                    open = "",
-                    empty = "",
+                    default = ">",
+                    open = ".",
+                    empty = ".",
                     empty_open = "",
                     symlink = "",
                     symlink_open = "",
@@ -173,4 +173,16 @@ require("focus").setup({
     }
 })
 
-
+require'treesitter-context'.setup{
+  enable = true, 
+  multiwindow = false, 
+  max_lines = 0, 
+  min_window_height = 0,
+  line_numbers = true,
+  multiline_threshold = 20, 
+  trim_scope = 'outer', 
+  mode = 'cursor',  
+  separator = '-',
+  zindex = 20, 
+  on_attach = nil, 
+}
