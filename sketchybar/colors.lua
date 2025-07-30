@@ -5,6 +5,8 @@ return {
   green = 0xff9ed072,
   blue = 0xff76cce0,
   yellow = 0xffe7c664,
+  yellow_faded = 0x66FFD966,
+  yellow_highlight = 0xFFFFD966,
   orange = 0xfff39660,
   magenta = 0xffb39df3,
   grey = 0xff7f8490,

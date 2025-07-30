@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-tree/nvim-tree.lua'
 
   Plug 'Mofiqul/dracula.nvim'
+  Plug 'ellisonleao/gruvbox.nvim'
 
   Plug 'nvim-focus/focus.nvim'
 

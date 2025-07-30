@@ -11,7 +11,7 @@ RESET="\033[0m"
 ROXIN="\033[38;5;183m"
 
 function dir_ps1() {
-  echo -e "${ROXIN}⭐$(pwd)${RESET}"
+  echo -e "${ROXIN}$(pwd)${RESET}"
 }
 
 function git_ps1() {

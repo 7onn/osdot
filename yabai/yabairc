@@ -1,17 +1,11 @@
 #!/usr/bin/env sh
 
-# load scripting additions (optional)
-# sudo yabai --load-sa
-# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-# new window spawns to the right if vertical split, or bottom if horizontal split
-# yabai -m config window_placement second_child
-
 # padding set to 12px
-yabai -m config top_padding 5
-yabai -m config bottom_padding 49
-yabai -m config left_padding 23
-yabai -m config right_padding 26
-yabai -m config window_gap 20
+yabai -m config top_padding 0
+yabai -m config bottom_padding 4
+yabai -m config left_padding 4
+yabai -m config right_padding 7
+yabai -m config window_gap 4
 
 # -- mouse settings --
 
@@ -41,4 +35,8 @@ yabai -m config layout bsp
 #yabai -m config active_window_opacity 0.50
 #yabai -m config normal_window_opacity 0.2
 
-borders active_color=0xff9ed072 inactive_color=0xffb39df3 width=7.0 &
+# purple/green based
+#borders active_color=0xff9ed072 inactive_color=0xffb39df3 width=7.0 &
+
+# yellow (graphene) based
+borders active_color=0xFFFFD966 inactive_color=0x66FFD966 width=7.0 &
