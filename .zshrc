@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Default config folder
+export XDG_CONFIG_HOME="/Users/tom/.config"
+
 # prevent CTRL-D from closing Kitty
 setopt ignore_eof
 
@@ -49,6 +52,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Bindkeys
 . ~/.zsh/bindkeys.zsh
+
+# K9s
+export K9SCONFIGDIR="$XDG_CONFIG_HOME/k9s"
 
 
 # Java

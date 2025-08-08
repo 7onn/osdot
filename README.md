@@ -20,6 +20,7 @@ ln -sf ~/osdot/.gitconfig ~/.gitconfig
 
 # Plugins
 ln -sf ~/osdot/.aws/aws-console-color ~/.aws/aws-console-color
+ln -sf ~/osdot/k9s ~/.config/k9s
 ```
 
 
