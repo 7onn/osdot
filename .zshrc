@@ -11,6 +11,26 @@ zstyle ':completion:*' menu select
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
+# history
+HISTFILE="$HOME/.zsh_history"
+# Keep a big history in memory
+HISTSIZE=100000
+SAVEHIST=100000
+# Don't record the same command consecutively
+setopt HIST_IGNORE_DUPS
+# Don't record if it's already in history (anywhere)
+setopt HIST_IGNORE_ALL_DUPS
+# Remove older duplicate entries when new ones are added
+setopt HIST_EXPIRE_DUPS_FIRST
+# Remove superfluous blanks before recording
+setopt HIST_REDUCE_BLANKS
+# Share history across all zsh sessions in real time
+setopt SHARE_HISTORY
+# Append history instead of rewriting it on each shell exit
+setopt APPEND_HISTORY
+# Save history incrementally during the session
+setopt INC_APPEND_HISTORY
+
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
