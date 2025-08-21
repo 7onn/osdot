@@ -10,4 +10,4 @@ k9s:
     crumbsless: false
     noIcons: false
     reactive: false
-    skin: gruvbox-dark 
+    skin: dracula

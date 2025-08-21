@@ -20,7 +20,7 @@ vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
 
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme dracula]]
 
 vim.api.nvim_set_hl(0, "Normal",     { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC",   { bg = "none" })

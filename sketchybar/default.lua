@@ -10,7 +10,7 @@ sbar.default({
       style = settings.font.style_map["Bold"],
       size = 16.0
     },
-    color = colors.yellow_highlight,
+    color = colors.magenta,
     padding_left = settings.paddings,
     padding_right = settings.paddings,
     background = { image = { corner_radius = 3 } },
@@ -21,7 +21,7 @@ sbar.default({
       style = settings.font.style_map["Semibold"],
       size = 13.0
     },
-    color = colors.yellow_highlight,
+    color = colors.green,
     padding_left = settings.paddings,
     padding_right = settings.paddings,
   },
@@ -29,10 +29,10 @@ sbar.default({
     height = 26,
     corner_radius = 3,
     border_width = 0,
-    border_color = colors.yellow_faded,
+    border_color = colors.magenta,
     image = {
       corner_radius = 3,
-      border_color = colors.yellow_highlight,
+      border_color = colors.green,
       border_width = 0
     }
   },

@@ -6,14 +6,14 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 
 local cal = sbar.add("item", {
   icon = {
-    color = colors.yellow_highlight,
+    color = colors.magenta,
     padding_left = 5,
     font = {
       style = settings.font.style_map["Black"],
     },
   },
   label = {
-    color = colors.yellow_highlight,
+    color = colors.magenta,
     padding_right = 8,
     width = 40,
     align = "right",

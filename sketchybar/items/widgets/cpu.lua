@@ -39,7 +39,7 @@ cpu:subscribe("cpu_update", function(env)
   local color = colors.blue
   if load > 30 then
     if load < 60 then
-      color = colors.yellow
+      color = colors.magenta
     elseif load < 80 then
       color = colors.orange
     else

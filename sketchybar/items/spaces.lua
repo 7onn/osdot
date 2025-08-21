@@ -13,14 +13,14 @@ for i = 1, 10, 1 do
       string = i,
       padding_left = 15,
       padding_right = 8,
-      color = colors.yellow,
-      highlight_color = colors.yellow,
+      color = colors.magenta,
+      highlight_color = colors.green,
     },
     label = {
       padding_right = 20,
-      color = colors.yellow_faded,
+      color = colors.magenta,
       -- background_color = colors.magenta,
-      highlight_color = colors.yellow_highlight,
+      highlight_color = colors.green,
       
       font = "sketchybar-app-font:Regular:16.0",
       y_offset = -1,
@@ -31,7 +31,7 @@ for i = 1, 10, 1 do
       color = colors.transparent,
       border_width = -1,
       height = 26,
-      border_color = colors.yellow_highlight,
+      border_color = colors.green,
     },
     popup = { background = { border_width = 5, border_color = colors.black } }
   })
@@ -42,7 +42,7 @@ for i = 1, 10, 1 do
   local space_bracket = sbar.add("bracket", { space.name }, {
     background = {
       color = colors.transparent,
-      border_color = colors.yellow_highlight,
+      border_color = colors.green,
       height = 28,
       border_width = 2,
     }
@@ -107,7 +107,7 @@ local spaces_indicator = sbar.add("item", {
   icon = {
     padding_left = 8,
     padding_right = 9,
-    color = colors.yellow_highlight,
+    color = colors.magenta,
     string = icons.switch.on,
   },
   label = {
@@ -118,8 +118,8 @@ local spaces_indicator = sbar.add("item", {
     color = colors.bg1,
   },
   background = {
-    color = colors.with_alpha(colors.yellow_highlight, 0.0),
-    border_color = colors.with_alpha(colors.yellow_faded, 0.0),
+    color = colors.with_alpha(colors.magenta, 0.0),
+    border_color = colors.with_alpha(colors.magenta, 0.0),
   }
 })
 
