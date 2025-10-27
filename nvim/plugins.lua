@@ -36,8 +36,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'Mofiqul/dracula.nvim'
   Plug 'ellisonleao/gruvbox.nvim'
+  Plug 'EdenEast/nightfox.nvim'
 
   Plug 'nvim-focus/focus.nvim'
+
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 call plug#end()
 ]], false)
