@@ -34,6 +34,7 @@ setopt INC_APPEND_HISTORY
 # Brew
 eval "$(/usr/local/bin/brew shellenv)"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 
 # User binaries
 if [[ -d $HOME/bin ]] export PATH="$HOME/bin:$PATH"
@@ -137,3 +138,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+
+export BOUNDARY_ADDR="https://boundary.stagingdesigner.com"
+# export BOUNDARY_SCOPE_ID="o_U9pvgUkpLG"

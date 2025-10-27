@@ -10,4 +10,5 @@ k9s:
     crumbsless: false
     noIcons: false
     reactive: false
-    skin: dracula
+    #skin: dracula
+    skin: carbonfox

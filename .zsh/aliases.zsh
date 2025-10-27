@@ -1,7 +1,7 @@
 
 # Aliases
 alias gs='git status'
-alias cat='bat'
+# alias cat='bat'
 alias gpull='git pull'
 alias gpush='git push'
 alias gcheckout='git checkout'
