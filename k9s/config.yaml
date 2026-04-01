@@ -10,5 +10,6 @@ k9s:
     crumbsless: false
     noIcons: false
     reactive: false
-    #skin: dracula
-    skin: carbonfox
+    # skin: dracula
+    # skin: carbonfox
+    skin: gruvbox-dark
