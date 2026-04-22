@@ -9,6 +9,8 @@ ln -sf ~/osdot/.zshrc ~/.zshrc
 ln -sf ~/osdot/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/osdot/.zsh ~/.zsh
 ln -sf ~/osdot/kitty/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf ~/osdot/kitty/themes/GruvBox.conf ~/.config/kitty/theme.conf
+
 
 # nvim
 ## https://github.com/junegunn/vim-plug
