@@ -12,4 +12,5 @@ k9s:
     reactive: false
     # skin: dracula
     # skin: carbonfox
-    skin: gruvbox-dark
+    #skin: gruvbox-dark
+    skin: transparent
