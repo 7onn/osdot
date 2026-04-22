@@ -30,6 +30,10 @@ tameouvindo() {
   sudo lsof -iTCP -sTCP:LISTEN
 }
 
+ports(){
+  sudo lsof -i -P -n | grep LISTEN
+}
+
 myip(){
 #  curl -s https://ipinfo.io/json | jq .ip | sed -e 's/\"//g' | pbcopy
 #  curl -s https://httpbin.org/ip | jq .origin | sed -e 's/\"//g' | pbcopy
