@@ -13,3 +13,4 @@ alias v='nvim'
 alias ll='ls -alht'
 alias ..='cd ..'
 alias ...='cd ../..'
+

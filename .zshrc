@@ -59,17 +59,25 @@ export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
 
+# Aliases
+. ~/.zsh/fubectl.zsh
+. ~/.zsh/aliases.zsh
 
 # Kubernetes
 export KUBE_CONFIG_PATH=~/.kube/config
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-. ~/.zsh/fubectl.zsh
+if command -v kubecolor >/dev/null 2>&1; then
+  source <(kubecolor completion zsh)
+  compdef _kubectl kubecolor
+else
+  source <(kubectl completion zsh)
+fi
+compdef _kubectl kubectl
+compdef _kubectl k
+
 
 # Cool ps1
 . ~/.zsh/ps1.zsh
-
-# Aliases
-. ~/.zsh/aliases.zsh
 
 # Bindkeys
 . ~/.zsh/bindkeys.zsh
@@ -95,6 +103,7 @@ export K9SCONFIGDIR="$XDG_CONFIG_HOME/k9s"
 export PATH="$PATH:/Users/tom/.local/bin"
 # Created by `pipx` on 2024-12-02 09:29:22
 export PATH="$PATH:/Users/tom/Library/Python/3.11/bin"
+export PATH="$PATH:/Users/tom/Library/Python/3.9/bin"
 
 
 # Google Cloud
