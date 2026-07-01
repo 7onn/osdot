@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Default config folder
-export XDG_CONFIG_HOME="/Users/tom/.config"
+export XDG_CONFIG_HOME="/Users/tom.garcia/.config"
 
 # prevent CTRL-D from closing Kitty
 setopt ignore_eof
@@ -32,7 +32,7 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 
 # Brew
-eval "$(/usr/local/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 
@@ -54,10 +54,10 @@ if [ -f "$HOME/.zsh/nada.zsh" ]; then source "$HOME/.zsh/nada.zsh"; fi
 # Go
 export GOPROXY="https://proxy.golang.org,direct"
 export GOSUMDB="sum.golang.org"
-export GOROOT=/usr/local/opt/go/libexec/
+export GOROOT=/usr/local/go
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
-export PATH="$PATH:$GOBIN"
+export PATH="$PATH:$GOBIN:/usr/local/go/bin"
 
 # Aliases
 . ~/.zsh/fubectl.zsh
@@ -100,10 +100,10 @@ export K9SCONFIGDIR="$XDG_CONFIG_HOME/k9s"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 # Created by `pipx` on 2024-12-02 09:29:15
-export PATH="$PATH:/Users/tom/.local/bin"
+export PATH="$PATH:/Users/tom.garcia/.local/bin"
 # Created by `pipx` on 2024-12-02 09:29:22
-export PATH="$PATH:/Users/tom/Library/Python/3.11/bin"
-export PATH="$PATH:/Users/tom/Library/Python/3.9/bin"
+export PATH="$PATH:/Users/tom.garcia/Library/Python/3.11/bin"
+export PATH="$PATH:/Users/tom.garcia/Library/Python/3.9/bin"
 
 
 # Google Cloud
@@ -141,13 +141,9 @@ alias nvm='fnm'
 
 #. "$HOME/.local/bin/env"
 
-export PNPM_HOME="/Users/tom/Library/pnpm"
+export PNPM_HOME="/Users/tom.garcia/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-
-export BOUNDARY_ADDR="https://boundary.stagingdesigner.com"
-# export BOUNDARY_SCOPE_ID="o_U9pvgUkpLG"
