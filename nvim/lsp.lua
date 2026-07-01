@@ -15,7 +15,9 @@ vim.api.nvim_set_keymap('n', '<Leader>k', ':lua require("lsp_signature").toggle_
 
 
 -- Terraform
-require'lspconfig'.terraformls.setup{}
+vim.lsp.config('terraformls', {})
+vim.lsp.enable('terraformls')
+
 local fsgtf = vim.api.nvim_create_augroup("TerraformFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.tf*",
@@ -27,7 +29,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 
 -- Go
-require'lspconfig'.gopls.setup{}
+vim.lsp.config('gopls', {})
+vim.lsp.enable('gopls')
+
 local fsggo = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
@@ -41,7 +45,9 @@ require('go').setup()
 
 -- Python
 -- vim.g.python3_host_prog = "/opt/homebrew/bin/python3.10"
-require'lspconfig'.pyright.setup{}
+vim.lsp.config('pyright', {})
+vim.lsp.enable('pyright')
+
 local fsgpy = vim.api.nvim_create_augroup("PythonFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.py",
@@ -53,7 +59,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 
 -- Kotlin
-require'lspconfig'.kotlin_language_server.setup{}
+vim.lsp.config('kotlin_language_server', {})
+vim.lsp.enable('kotlin_language_server')
 
 local fsgkt = vim.api.nvim_create_augroup("KotlinFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {

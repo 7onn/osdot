@@ -142,8 +142,7 @@ alias nvm='fnm'
 #. "$HOME/.local/bin/env"
 
 export PNPM_HOME="/Users/tom.garcia/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+export PATH="$PATH:$PNPM_HOME:$PNPM_HOME/bin"
+
+
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
