@@ -1,7 +1,10 @@
+[github]
+user = 7onn
+
 [user]
-email = tmg.7@icloud.com
+email = tom.garcia@trading212.com
 name = Tom Garcia
-signingkey = 0x8B4A6A4401C3462B
+signingkey = 0xD165AF52B2B44EAA
 [commit]
 gpgsign = true
 
@@ -16,9 +19,6 @@ pager = true
 [alias]
 lg = log --graph --all
 
-[github]
-user = 7onn
-
 [core]
 excludesfile = ~/.gitignore_global
 
@@ -31,6 +31,6 @@ clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 [pull]
-	rebase = true
+rebase = true
 [init]
 defaultBranch = main

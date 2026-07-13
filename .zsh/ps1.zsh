@@ -39,7 +39,7 @@ function kube_ps1() {
   if [[ -n "$ctx" ]]; then
     local ns="$(kube_ctx_namespace)"
     # Color context red if it contains 'prod'
-    if [[ "$ctx" == *"production"* ]]; then
+    if [[ "$ctx" == *"prod"* ]]; then
       echo -e "${RED}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"
     else
       echo -e "${GREEN}⛵${ctx}${RESET}/${CYAN}${ns}${RESET}"

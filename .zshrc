@@ -1,4 +1,6 @@
 #!/bin/zsh
+source ~/.zsh-trading212
+export AWS_CA_BUNDLE="$HOME/.aws/certs/aws_combined_bundle.pem"
 
 # Default config folder
 export XDG_CONFIG_HOME="/Users/tom.garcia/.config"
@@ -124,7 +126,8 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 
 # Functions
-source ~/.zsh/functions.zsh
+. ~/.zsh/functions.zsh
+. ~/.zsh/fzf.zsh
 
 
 # Javascript
@@ -141,8 +144,11 @@ alias nvm='fnm'
 
 #. "$HOME/.local/bin/env"
 
+eval "$(~/.local/bin/mise activate zsh)"
+
 export PNPM_HOME="/Users/tom.garcia/Library/pnpm"
 export PATH="$PATH:$PNPM_HOME:$PNPM_HOME/bin"
 
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
+
