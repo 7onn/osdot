@@ -6,7 +6,6 @@ Stores config for some tools in my machine
 # terminal stuff
 ln -sf ~/osdot/.tmux.conf ~/.tmux.conf
 ln -sf ~/osdot/.zshrc ~/.zshrc
-ln -sf ~/osdot/.p10k.zsh ~/.p10k.zsh
 ln -sf ~/osdot/.zsh ~/.zsh
 ln -sf ~/osdot/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf ~/osdot/kitty/themes/Dracula.conf ~/.config/kitty/theme.conf
@@ -28,7 +27,5 @@ ln -sf ~/osdot/k9s ~/.config/k9s
 
 ## MacOS specific
 ```
-ln -sf ~/osdot/yabay ~/.config/yabai
 ln -sf ~/osdot/skhd ~/.config/skhd
-ln -sf ~/osdot/sketchybar ~/.config/sketchybar
 ```
