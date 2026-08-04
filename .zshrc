@@ -152,3 +152,5 @@ export PATH="$PATH:$PNPM_HOME:$PNPM_HOME/bin"
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

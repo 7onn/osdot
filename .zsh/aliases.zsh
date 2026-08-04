@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Aliases
 alias gs='git status'
@@ -13,4 +14,4 @@ alias v='nvim'
 alias ll='ls -alht'
 alias ..='cd ..'
 alias ...='cd ../..'
-
+alias yqspec='yq ". | del .status"'

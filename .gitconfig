@@ -5,6 +5,7 @@ user = 7onn
 email = tom.garcia@trading212.com
 name = Tom Garcia
 signingkey = 0xD165AF52B2B44EAA
+
 [commit]
 gpgsign = true
 
@@ -25,12 +26,24 @@ excludesfile = ~/.gitignore_global
 [push]
 default = simple
 
+[pull]
+rebase = true
+
 [filter "lfs"]
 required = true
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
-[pull]
-rebase = true
+
 [init]
 defaultBranch = main
+templateDir = /Users/tom.garcia/.git-template
+
+[url "ssh://git@github.com/Trading212Dev/"]
+insteadOf = https://github.com/Trading212Dev/
+
+[url "ssh://git@github.com/trading212/"]
+insteadOf = https://github.com/trading212/
+
+[advice]
+detachedHead = false
