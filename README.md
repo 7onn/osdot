@@ -8,7 +8,7 @@ ln -sf ~/osdot/.tmux.conf ~/.tmux.conf
 ln -sf ~/osdot/.zshrc ~/.zshrc
 ln -sf ~/osdot/.zsh ~/.zsh
 ln -sf ~/osdot/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -sf ~/osdot/kitty/themes/CarbonFox.conf ~/.config/kitty/theme.conf
+ln -sf ~/osdot/kitty/themes ~/.config/kitty/themes
 
 
 # nvim
