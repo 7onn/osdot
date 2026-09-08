@@ -34,9 +34,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'nvim-tree/nvim-web-devicons' " optional
   Plug 'nvim-tree/nvim-tree.lua'
 
-  Plug 'Mofiqul/dracula.nvim'
-  Plug 'ellisonleao/gruvbox.nvim'
-  Plug 'EdenEast/nightfox.nvim'
+  Plug 'jeffkreeftmeijer/vim-dim'
 
   Plug 'nvim-focus/focus.nvim'
 

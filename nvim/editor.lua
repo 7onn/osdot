@@ -142,7 +142,7 @@ require("nvim-tree").setup({
 
 
 require("focus").setup({
-    enable = true, -- Enable module
+    enable = false, -- Enable module
     commands = true, -- Create Focus commands
     autoresize = {
         enable = true, -- Enable or disable auto-resizing of splits
@@ -162,7 +162,7 @@ require("focus").setup({
         hybridnumber = false, -- Display hybrid line numbers in the focussed window only
         absolutenumber_unfocussed = false, -- Preserve absolute numbers in the unfocussed windows
 
-        cursorline = true, -- Display a cursorline in the focussed window only
+        cursorline = false, -- Display a cursorline in the focussed window only
         cursorcolumn = false, -- Display cursorcolumn in the focussed window only
         colorcolumn = {
             enable = false, -- Display colorcolumn in the foccused window only
