@@ -27,7 +27,7 @@ excludesfile = ~/.gitignore_global
 default = simple
 
 [pull]
-rebase = true
+rebase = false
 
 [filter "lfs"]
 required = true
