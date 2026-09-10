@@ -36,8 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'jeffkreeftmeijer/vim-dim'
 
-  Plug 'nvim-focus/focus.nvim'
-
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
